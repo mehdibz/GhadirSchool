@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>Servlet 3.0 application</display-name>
+  <servlet>
+    <servlet-name>GhadirServ</servlet-name>
+    <servlet-class>Controller.GhadirServ</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>StudentRegisterServlet</servlet-name>
+    <servlet-class>Controller.StudentRegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>TeacherRegisterServlet</servlet-name>
+    <servlet-class>Controller.TeacherRegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ReportServlet</servlet-name>
+    <servlet-class>Controller.ReportServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginController</servlet-name>
+    <servlet-class>Controller.LoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GhadirServ</servlet-name>
+    <url-pattern>/GhadirServ</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>MainPage.jsp</welcome-file>
+  </welcome-file-list>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error404.html</location>
+  </error-page>
+</web-app>

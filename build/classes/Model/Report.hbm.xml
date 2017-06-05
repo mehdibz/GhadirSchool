@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="Model">
+ 
+    <class name="ReportModel" table="report_16_17_t2">
+        <id name="stdID" column="Student_ID">
+            <generator class="increment"/>
+        </id>
+        <property name="farsi_score" column="Farsi"/>
+        <property name="dictation_score" column="Dictation"/>
+        <property name="grammar_score" column="Grammar"/>
+        <property name="reading_score" column="Reading"/>
+        <property name="FaDisciplineScore" column="F_Discipline"/>
+        <property name="religion_score" column="Religion"/>
+        <property name="ReDisciplineScore" column="R_Discipline"/>
+        <property name="quran_score" column="Quran"/>
+        <property name="QuDisciplineScore" column="Q_Discipline"/>
+        <property name="salat_score" column="Salat"/>
+        <property name="SaDisciplineScore" column="S_Discipline"/>
+        <property name="discipline_score" column="Discipline"/>
+        <property name="F_description" column="Fa_Description"/>
+        <property name="R_description" column="Re_Description"/>
+        <property name="Q_description" column="Qu_Description"/>
+        <property name="S_description" column="Sa_Description"/>
+    </class>
+    
+    <class name="StudentModel" table="student">
+        <id name="userid" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="fname" column="Name "/> 
+        <property name="lname" column="Family"/> 
+        <property name="BirthDate" column="BirthDate"/>
+        <property name="email" column="Primary_Email"/>
+        <property name="phone" column="Primary_Phone"/>
+        <property name="emergency" column="Emergency_Contact"/>
+        <property name="address" column="Address "/>
+        <property name="details" column="Others"/>
+    </class>
+ 
+</hibernate-mapping>
