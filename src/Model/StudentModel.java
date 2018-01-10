@@ -1,30 +1,58 @@
 package Model;
 
-public class StudentModel {
-	private String userid,fname,lname,BirthDate,email,phone,emergency,address,details;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.TableGenerator;
 
-	public String getUserid() {
-		return userid;
+@Entity
+@Table( name = "StudentModel" )
+@TableGenerator(name = "seq", allocationSize = 110100, initialValue = 110100)
+//@SequenceGenerator(name="seq", initialValue=110101, allocationSize=110100)
+public class StudentModel {
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq")
+	//@Column(name = "Std_ID", length = 11, precision = 110101, nullable = false)
+	private int Std_ID;
+	private String Username,Fname,Lname,BirthDate,Email,Address,Restriction,Details,Gender,Password,PostalCode,City,DateTime;
+	long Phone,Emergency,Carecard;
+	int FarsiGrade;
+	
+	public StudentModel(){ }
+	
+
+
+	
+	
+	
+	public String getUsername() {
+		return Username;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUsername(String username) {
+		Username = username;
+	}
+
+	public int getId() {
+		return Std_ID;
 	}
 
 	public String getFname() {
-		return fname;
+		return Fname;
 	}
 
 	public void setFname(String fname) {
-		this.fname = fname;
+		Fname = fname;
 	}
 
 	public String getLname() {
-		return lname;
+		return Lname;
 	}
 
 	public void setLname(String lname) {
-		this.lname = lname;
+		Lname = lname;
 	}
 
 	public String getBirthDate() {
@@ -35,46 +63,106 @@ public class StudentModel {
 		BirthDate = birthDate;
 	}
 
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public String getEmergency() {
-		return emergency;
-	}
-
-	public void setEmergency(String emergency) {
-		this.emergency = emergency;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getDetails() {
-		return details;
-	}
-
-	public void setDetails(String details) {
-		this.details = details;
-	}
-
 	public String getEmail() {
-		return email;
+		return Email;
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+		Email = email;
+	}
+
+	public String getAddress() {
+		return Address;
+	}
+
+	public void setAddress(String address) {
+		Address = address;
+	}
+
+	public String getRestriction() {
+		return Restriction;
+	}
+
+	public void setRestriction(String restriction) {
+		Restriction = restriction;
+	}
+
+	public String getDetails() {
+		return Details;
+	}
+
+	public void setDetails(String details) {
+		Details = details;
+	}
+
+	public String getGender() {
+		return Gender;
+	}
+
+	public void setGender(String gender) {
+		Gender = gender;
+	}
+
+	public String getPassword() {
+		return Password;
+	}
+
+	public void setPassword(String password) {
+		Password = password;
+	}
+
+	public long getPhone() {
+		return Phone;
+	}
+
+	public void setPhone(long phone) {
+		Phone = phone;
+	}
+
+	public long getEmergency() {
+		return Emergency;
+	}
+
+	public void setEmergency(long emergency) {
+		Emergency = emergency;
+	}
+
+	public long getCarecard() {
+		return Carecard;
+	}
+
+	public void setCarecard(long carecard) {
+		Carecard = carecard;
+	}
+
+	public String getPostalCode() {
+		return PostalCode;
 	}
 	
+	public void setPostalCode(String postalcode) {
+		PostalCode = postalcode;
+	}
 	
+	public String getCity() {
+		return City;
+	}
 	
+	public void setCity(String city) {
+		City = city;
+	}
+	public long getFarsiGrade() {
+		return FarsiGrade;
+	}
+	
+	public void setFarsiGrade(int farsigrade) {
+		FarsiGrade = farsigrade;
+	}
+
+	public String getDateTime() {
+		return DateTime;
+	}
+
+	public void setDateTime(String dateTime) {
+		DateTime = dateTime;
+	}
 }

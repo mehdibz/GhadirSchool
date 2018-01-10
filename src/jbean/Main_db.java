@@ -14,7 +14,7 @@ public class Main_db extends HttpServlet implements Serializable
 {
 	private static final long serialVersionUID = 1L;
 	
-	public String userid,text1,total_score,dictation_score,grammar_score,reading_score,discipline_score,query;
+	public String text1,total_score,dictation_score,grammar_score,reading_score,discipline_score,query;
 	public Connection con;
 	public Vector<String> base_result;
 	
@@ -27,14 +27,15 @@ public class Main_db extends HttpServlet implements Serializable
 		Vector<String> v = new Vector<String>();
 		try
 		{	
-    		PreparedStatement stat = con.prepareStatement("select Id,Name,Family from student");
+    		PreparedStatement stat = con.prepareStatement("select Std_ID,Fname,Lname,FarsiGrade from studentmodel");
     		ResultSet rs= stat.executeQuery();
     		while(!(rs.isLast())){
     			if(rs.next())
         		{	
-        			v.addElement(rs.getString("Id"));
-        			v.addElement(rs.getString("Name"));
-        			v.addElement(rs.getString("Family"));
+        			v.addElement(rs.getString("Std_ID"));
+        			v.addElement(rs.getString("Fname"));
+        			v.addElement(rs.getString("Lname"));
+        			v.addElement(rs.getString("FarsiGrade"));
         		}
     		}
     	}
@@ -45,6 +46,31 @@ public class Main_db extends HttpServlet implements Serializable
 		this.base_result= v;
 		return base_result;
 	}
+
+	public Vector<String> getList_ByCourse()
+	{
+		Vector<String> v = new Vector<String>();
+		try
+		{	
+    		PreparedStatement stat = con.prepareStatement("select Std_ID,Fname,Lname from studentmodel");
+    		ResultSet rs= stat.executeQuery();
+    		while(!(rs.isLast())){
+    			if(rs.next())
+        		{	
+        			v.addElement(rs.getString("Std_ID"));
+        			v.addElement(rs.getString("Fname"));
+        			v.addElement(rs.getString("Lname"));
+        		}
+    		}
+    	}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		this.base_result= v;
+		return base_result;
+	}
+	
 	
 	public Vector<String> course_show(){
 		

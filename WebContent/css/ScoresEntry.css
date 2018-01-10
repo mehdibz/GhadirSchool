@@ -1,0 +1,334 @@
+/*http://css-snippets.com/drop-down-navigation */
+Body {
+
+		direction: rtl;
+}
+.cons {
+	margin: 2%;
+	margin-top: 10%;
+	padding: 2%;
+	background-color: #ceceff;
+}
+
+.icon {
+	width: 13%;
+}
+
+ul {
+	border: 1px solid #000;
+}
+
+.tbl_reg {
+	margin: auto;
+	margin-top: 6%;
+	width: 27%;
+	border: 1px solid #8000ff;
+	height: 50%;
+}
+
+.curve {
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+}
+
+.curve-top {
+	-webkit-border-top-right-radius: 6px;
+	-webkit-border-top-left-radius: 6px;
+	-moz-border-top-right-radius: 6px;
+	-moz-border-top-left-radius: 6px;
+	text-align: center;
+}
+
+.curve-bottom {
+	-webkit-border-bottom-right-radius: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	-moz-border-bottom-right-radius: 6px;
+	-moz-border-bottom-left-radius: 6px;
+}
+
+#fix {
+	margin: auto;
+	height: 90%;
+	width: 97%;
+	font-size: .9em;
+}
+
+#fixlbl {
+	margin: auto;
+	height: 90%;
+	width: 50%;
+	font-size: 95%;
+}
+
+/*======================================================================================================
+=============================================== 600 px =================================================
+======================================================================================================*/
+@media screen and (min-width: 600px) {
+
+	section {
+		margin-right: 8%;
+		text-align: right;
+		font-size: 1.5em;
+	}
+	marquee {
+		font-size: 1.1em;
+	}
+
+	.small_date {
+		margin-left: 2%;
+		font-size: 1.3em;
+	}
+	#notice {
+		font-size: 1.3em;
+	}
+
+
+	/*=================== View Page ========================*/
+	#pview {
+		background-color: #9797ff;
+		/*background: no-repeat url("../img/Blur/imageedit_921.jpg");*/
+		background-size: 100%;
+		padding-top: 1%;
+		padding-bottom: 3%;
+		/*
+		-webkit-filter: blur(5px);
+		-moz-filter: blur(5px);
+	    filter: blur(5px);
+	   
+	    -webkit-filter: opacity(30%); 
+	    -moz-filter: opacity(30%);
+	    filter: opacity(30%); */
+	}
+
+	#ViewBody {
+		margin: 2%;
+		margin-right: 5%;
+		padding: 1%;
+		color: black;
+	}
+	.button {
+		margin: auto;
+		margin-left: 2%;
+		margin-right: 2%;
+		height: 40px;
+		width: 10%;
+		font-size: 1.0em;
+	}
+
+	#view_combo_div {
+		margin-left: 5%;
+		/*height: 10px;*/
+		/*font-size: 0.9em;*/
+		width: 32.5%;
+		display: inline;
+		-webkit-filter: opacity(30%);
+		-moz-filter: opacity(30%);
+		filter: opacity(80%);
+	}
+
+	.tx_box_final {
+		margin: auto;
+		width: 35%;
+		padding-left: 1%;
+		padding-right: 1%;
+	}
+	.view_combo_final {
+		margin: auto;
+		width: 32%;
+		padding-left: 0%;
+		padding-right: 0%;
+	}
+	#Farsi_div {
+		margin: auto;
+		padding-left: 0%;
+		padding-right: 0%;
+		width: 27%;
+		display: inline-table;
+	}
+	.view_combo_Num {
+		margin: auto;
+		width: 28%;
+		padding-left: 0%;
+		padding-right: 0%;
+		font-size: 0.8em;
+	}
+	.tx_box_sub_Fa {
+		width: 58%;
+		padding-left: 0%;
+		padding-right: 1%;
+		font-size: 0.9em;
+	}
+	#view_combo_MainCourse {
+		width: 10%;
+		padding-left: 0%;
+		padding-right: 0%;
+		font-size: 1.0em;
+	}
+	#view_combo_stdName {
+		width: 26%;
+		padding-left: 0%;
+		padding-right: 0%;
+		font-size: 1.0em;
+	}
+	#std_combo_opt {
+		font-size: 1.0em;
+	}
+	.text_area {
+		margin: auto;
+		margin-top: 1%;
+		height: 130px;
+		width: 100%;
+		text-align: right;
+		font-size: 1.0em;
+		resize: none;
+	}
+	.details_caption {
+		font-size: 1.1em;
+	}
+}
+/*======================================================================================================
+=============================================== 1000 px =================================================
+======================================================================================================*/
+@media screen and (min-width: 1000px) {
+
+	section {
+		margin-right: 10%;
+		text-align: right;
+		font-size: 1.6em;
+	}
+
+
+	/*=================== View Page  ========================*/
+	#pview {
+		background-color: #8a918e;
+		/*background: no-repeat url("../img/Blur/imageedit_9.jpg");*/
+		background-size: 100%;
+		padding-top: 1%;
+		padding-bottom: 3%;
+		/*
+		-webkit-filter: blur(5px);
+		-moz-filter: blur(5px);
+	    filter: blur(5px);
+	   
+	    -webkit-filter: opacity(30%); 
+	    -moz-filter: opacity(30%);
+	    filter: opacity(30%); */
+	}
+	.id_col{
+		width: 1%;
+		font-size: 1.1em;
+	}
+	.name_col{
+		width: 2%;
+		font-size: 1.1em;
+	}
+	.course_col{
+		width: 2%;
+		font-size: 1.1em;
+	}
+	.score_col{
+		width: 1%;
+		font-size: 1.1em;
+	}
+	#ViewBody {
+		margin-left: 1%;
+		margin-right: 1%;
+		padding: 1%;
+		color: black;
+	}
+	#view_combo_div {
+		margin-left: 1%;
+		/*height: 10px;*/
+		/*font-size: 0.9em;*/
+		width: 95%;
+		display: inline;
+		-webkit-filter: opacity(30%);
+		-moz-filter: opacity(30%);
+		filter: opacity(80%);
+	}
+
+	.tx_box_final {
+		margin: auto;
+		width: 35%;
+		padding-left: 1%;
+		padding-right: 1%;
+		font-size: 0.9em;
+		font-style: bold;
+	}
+	.view_combo_final {
+		margin: auto;
+		width: 25%;
+		padding-left: 0%;
+		padding-right: 0%;
+		font-size: 0.9em;
+	}
+	#Farsi_div {
+		margin: auto;
+		padding-left: 0%;
+		padding-right: 0%;
+		width: 14%;
+		display: inline-table;
+	}
+	.view_combo_Num {
+		margin: auto;
+		width: 34%;
+		padding-left: 0%;
+		padding-right: 0%;
+		font-size: 0.8em;
+	}
+	.tx_box_sub_Fa {
+		width: 60%;
+		padding-left: 0%;
+		padding-right: 1%;
+		font-size: 0.9em;
+		font-style: bold;
+	}
+	#view_combo_MainCourse {
+		width: 6%;
+		padding-left: 0%;
+		padding-right: 0%;
+		font-size: 0.8em;
+	}
+	#view_combo_stdName {
+		width: 16.5%;
+		padding-left: 0%;
+		padding-right: 0%;
+		font-size: 0.8em;
+	}
+	#std_combo_opt {
+		font-size: 1.0em;
+	}
+	.text_area {
+		margin: auto;
+		margin-top: 1%;
+		height: 40px;
+		width: 98%;
+		text-align: right;
+		font-size: 1.0em;
+		resize: none;
+	}
+	.details_caption {
+		font-size: 0.8em;
+	}
+	.Center {
+		margin: auto;
+		text-align: center;
+		width: 50%;
+	}
+	
+	/*=================== Servlet ========================*/
+
+	table {
+		border-collapse: collapse;
+		text-align: center;
+		font-size: 0.9em;
+	}
+	th {
+		border: 2px solid #8000ff;
+		width: 8%;
+		font-size: 1.0em;
+	}
+	td {
+		border: 2px solid #8000ff;
+	}
+}

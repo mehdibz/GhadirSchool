@@ -1,3 +1,20 @@
+
+// Fill select option Value from Array
+/*
+	//document.addEventListener('touchstart', onTouchStart, {passive: true});
+	addEventListener(document, "touchstart", function(e) {
+    console.log(e.defaultPrevented);  // will be false
+    e.preventDefault();   // does nothing since the listener is passive
+    console.log(e.defaultPrevented);  // still false
+  }); */
+//===================================================================
+
+		function goBack() {
+			window.history.back();
+		}
+		function logout() {
+		    location.replace("../logout.jsp")
+		}
 		function Alert(){
         	document.getElementById('logMsg').style.display = 'inline-table';
         	//document.getElementById('CurrentDate').value = '';
@@ -44,6 +61,16 @@
         	document.getElementById('view_combo_stdName').value = '-';
         	document.getElementById('view_combo_MainCourse').value = '-';
         	document.getElementById('isvalid').value = '';
+		}
+		function profileForm(obj){
+	/*		if(obj==null){
+				document.getElementById('swap2').style.display = 'none';
+				document.getElementById('swap1').style.display = 'block';
+			}else{
+				document.getElementById('swap1').style.display = 'none';
+				document.getElementById('swap2').style.display = 'block';
+			}
+		*/	
 		}
 		function show_sub_farsi(){
         	var course_name=document.getElementById('view_combo_MainCourse').value;
@@ -110,21 +137,40 @@
             //document.getElementById('image').innerHTML=previewPic.alt;
     	}
 		
-		//=================Clock=================
+		//=================Clock===================================================================================
+		//=========================================================================================================
 		
 		var alternate=0
 		var standardbrowser=!document.all&&!document.getElementById
 		
 		if (standardbrowser)
-		document.write('<form name="tick"><input type="text" name="tock" size="11"></form>')
+		document.write('<form name="tick"><input type="text" name="tock" size="1"></form>')
 		
 		function show(){
 			if (!standardbrowser)
-				var clockobj=document.getElementById? document.getElementById("digitalclock") : document.all.digitalclock
+				//var clockobj=document.getElementById? document.getElementById("digitalclock") : document.all.digitalclock
+				var clockobj= document.getElementById("digitalclock") 
+				var Dateobj= document.getElementById("TotalCurrentDate") 
 				var Digital=new Date()
 				var hours=Digital.getHours()
 				var minutes=Digital.getMinutes()
+				var day=Digital.getDay()
+				var month=Digital.getMonth()
+				var year=Digital.getYear()
 				var dn="AM"
+				
+				
+
+			if (year < 1000)
+				year+=1900
+
+			var daym=Digital.getDate()
+				if (daym<10)
+					daym="0"+daym
+			var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+			var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+			var TotalCurrentDate=dayarray[day]+" <br> "+montharray[month]+" "+daym+", "+year;
+			var OnlyCurrentYear=year;
 					
 					if (hours==12) dn="PM" 
 						if (hours>12){
@@ -150,25 +196,7 @@
 								clockobj.innerHTML=hours+" : "+minutes+" "+"<sup style='font-size:70%'>"+dn+"</sup>"
 						}
 				alternate=(alternate==0)? 1 : 0
+				Dateobj.innerHTML="<br>"+TotalCurrentDate
 				setTimeout("show()",1000)
 			}
-			window.onload=show
-		//=================================Date=================
-		
-		function CurrentDate(){
-			var mydate=new Date()
-			var year=mydate.getYear()
-			if (year < 1000)
-				year+=1900
-				var day=mydate.getDay()
-				var month=mydate.getMonth()
-				var daym=mydate.getDate()
-				if (daym<10)
-					daym="0"+daym
-					var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
-			var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
-			var TotalCurrentDate="<small><font color='000000' face='Arial' class='small_date' ><b>"+dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"</b></font></small><br>";
-			var OnlyCurrentYear="<small><font color='000000' face='Arial' class='small_date' ><b>"+year+"</b></font></small><br>";
-			document.write(CDate)
-			document.getElementById('OnlyCurrentYear').value = CDate;
-		}
+			window.onload= show

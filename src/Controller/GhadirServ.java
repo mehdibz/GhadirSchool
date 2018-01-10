@@ -64,7 +64,7 @@ import DB_Connection.DB_Connection;
 		 request.setCharacterEncoding("UTF-8");
 		 out=response.getWriter();
 		 
-		 
+		 //request.getSession().getAttribute("StdId").toString();
 		 hidden=request.getParameter("ini");
 		 session=request.getSession();
 		 std_id=request.getParameter("std_name");
@@ -293,6 +293,7 @@ import DB_Connection.DB_Connection;
 			}
 			return query;	
 	}
+	 
 	 public String HeaderCoursetitle(String std_id,String Course){
 			String csName;
 			

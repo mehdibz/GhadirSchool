@@ -1,203 +1,536 @@
 /*http://css-snippets.com/drop-down-navigation */
 
-ul{
-  border: 1px solid #000;
-}
+
 .curve {
-	-webkit-border-radius:9px;
-	-moz-border-radius:9px;
-	border-radius:9px;
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	border-radius: 9px;
 }
+
 .curve-top {
-	-webkit-border-top-right-radius:6px;
-	-webkit-border-top-left-radius:6px;
-	-moz-border-top-right-radius:6px;
-	-moz-border-top-left-radius:6px;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-top-left-radius: 8px;
+	-moz-border-top-right-radius: 8px;
+	-moz-border-top-left-radius: 8px;
 	text-align: center;
 }
+
 .curve-bottom {
-	-webkit-border-bottom-right-radius:6px;
-	-webkit-border-bottom-left-radius:6px;
-	-moz-border-bottom-right-radius:6px;
-	-moz-border-bottom-left-radius:6px;
+	-webkit-border-bottom-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-moz-border-bottom-right-radius: 8px;
+	-moz-border-bottom-left-radius: 8px;
 }
 
-#fix{
+.fix {
 	margin: auto;
 	height: 90%;
-	width: 100%;
-	margin-left:2px;
-	margin-right:2px;
-  	font-size: .9em;
-  	display: inline-table;
-  	border: 0px solid ;
+	width: 97%;
+	margin-left: 2px;
+	margin-right: 2px;
+	font-size: .85em;
+	display: inline-table;
+	border: 0px solid;
 }
-.fix2{
+
+.fixlbl {
+	padding: 0px;
+	width: 37%;
+	background: white;
+}
+.fixMonths{
 	margin: auto;
 	height: 90%;
-	width: 100%;
-  	font-size: .9em;
-  	display: inline-table;
-  	border: 0px solid ;
+	width: 44%;
+	margin-left: 2px;
+	margin-right: 2px;
+	font-size: .85em;
+	display: inline-table;
+	border: 0px solid;
+	background: white;
 }
-#fixlbl{
-	padding: 0px; 
-	width:20%;
-}
-
-#FixHeader{
+.fixDays{
 	margin: auto;
 	height: 90%;
-	width: 50%;
-	font-size: 95%;
+	width: 22%;
+	margin-left: 2px;
+	margin-right: 2px;
+	font-size: .85em;
+	display: inline-table;
+	border: 0px solid;
+	background: white;
+}
+.fixYears{
+	margin: auto;
+	height: 90%;
+	width: 25%;
+	margin-left: 2px;
+	margin-right: 2px;
+	font-size: .85em;
+	display: inline-table;
+	border: 0px solid;
+	background: white;
 }
 
+    @-moz-keyframes blinker {  
+     0% { opacity: 1.0; }
+     50% { opacity: 0.0; }
+     100% { opacity: 1.0; }
+     }
 
+    @-webkit-keyframes blinker {  
+     0% { opacity: 1.0; }
+     50% { opacity: 0.0; }
+     100% { opacity: 1.0; }
+     }
+
+    @keyframes blinker {  
+     0% { opacity: 1.0; }
+     50% { opacity: 0.0; }
+     100% { opacity: 1.0; }
+     }
+
+	
+input.ng-invalid {
+    border-color: red;
+    outline-color: red;
+    font-style: red;
+ 	background-color: #ffc1c8;
+ 	
+}
+
+input.ng-valid {
+    border-color: green;
+    outline-color: green;
+    background-color: #a6ffa6;
+   
+}
+	.styling2 {
+		text-align: left;
+		margin-left: 2%;
+		color: #ffffff;
+		font: bold 24px MS Sans Serif;
+		padding: 0px;
+		text-shadow: 3px 3px 10px #252525;
+	}
+	body {
+		background-image: url("../img/Blur/Fer - Mob.jpg");
+		background-size: 100% 140%;
+		background-repeat: no-repeat;
+		height: auto;
+	}
+/* style="text-shadow: 3px 3px 10px #252525;" */
+	
+/*======================================================================================================
+=============================================== 350 px =================================================
+======================================================================================================*/
+@media screen and (min-width: 350px) {
+	#Ghadir_Logo_small {
+		margin: auto;
+		width: 50%;
+		height: auto;
+	}
+	body {
+		background-image: url("../img/Blur/Fer - Mob.jpg");
+		background-size: 100% 140%;
+		background-repeat: no-repeat;
+		height: auto;
+	}
+	
+	.small_date {
+		margin-left: 2%;
+		font-size: 1.3em;
+	}
+
+	input[type=checkbox]
+	{
+		/* Double-sized Checkboxes */
+		-ms-transform: scale(2); /* IE */
+		-moz-transform: scale(2); /* FF */
+		-webkit-transform: scale(2); /* Safari and Chrome */
+		-o-transform: scale(2); /* Opera */
+		padding: 10px;
+	}
+
+	input[type=radio]
+	{
+		/* Double-sized Checkboxes */
+		-ms-transform: scale(2); /* IE */
+		-moz-transform: scale(2); /* FF */
+		-webkit-transform: scale(2); /* Safari and Chrome */
+		-o-transform: scale(2); /* Opera */
+		padding: 10px;
+		margin: auto;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		margin-left: 2%;
+		margin-right: 2%;
+	}
+	#notice {
+		font-size: 1.3em;
+	}
+	.button {
+		margin: auto;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		margin-left: 1%;
+		margin-right: 1%;
+		height: 50px;
+		width: 20%;
+		font-size: 0.9em;
+	}
+	.red_star {
+		margin: auto;
+		margin-top: 2%;
+		text-align: center;
+		font-size: 1.1em;
+		color: #fe6d16;
+	}
+	.tbl_reg {
+		margin: auto;
+		margin-top: 2%;
+		text-align: center;
+		width: 90%;
+		border: 1px solid #d8b0ff;
+		font-size: 2.0em;
+		color:  1px solid #0134cb;
+		background-color: #d3d3d3;
+		opacity: .8;
+	}
+	.tbl_term {
+		margin: auto;
+		margin-top: 1%;
+		text-align: left;
+		width: 90%;
+		font-size: 2.0em;
+		color: 1px solid #0134cb;
+		background-color: #d3d3d3;
+		padding-right: 1%;
+    	padding-left: 1%;
+    	opacity: .8;
+	}
+	td{
+		padding: 5px;
+		margin: auto;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		margin-left: 2%;
+		margin-right: 2%;
+	}
+	.text_area {
+		margin: auto;
+		height: 74px;
+		width: 97%;
+		font-size: 1.1em;
+		resize:none;
+		background: white;
+	}
+	.wrap {
+		text-align: justify;
+		text-justify: inter-word;
+		padding-right: 1%;
+		padding-left: 1%;
+		font: 20px/20px Georgia, serif; 
+	}
+	.Status{
+		text-align: center;
+		font-size: 1.0em;
+		color:  #fe1224;
+		text-decoration: blink;
+	    animation:1s blinker linear infinite;
+    	-webkit-animation:1s blinker linear infinite;
+    	-moz-animation:1s blinker linear infinite;
+		color: red;
+	}
+	.SuccessSubmit{
+		text-align: center;
+		font-size: 1.0em;
+		color:  #015cf3;
+		text-decoration: blink;
+	}
+	.styling2 {
+		text-align: left;
+		margin-left: 2%;
+		color: #252525;
+		font: bold 24px MS Sans Serif;
+		padding: 0px;
+		text-shadow: 2px 2px 5px #252525;
+	}
+}
 /*======================================================================================================
 =============================================== 600 px =================================================
 ======================================================================================================*/
-  	 #Ghadir_Logo_small{
-		margin:auto;
-		width:50%;
-    	height: auto;
-    	
+@media screen and (min-width: 600px) {
+	body {
+		background-image: url("../img/Blur/Fer - Mob.jpg");
+		background-size: 120% 190%;
+		background-repeat: no-repeat;
+		height: auto;
 	}
-	.styling2{
-		margin-left: 3%;
-		color:#5500aa;
-		font: bold 28px MS Sans Serif;
-		padding: 3px;
-
-	}
-	section{
-		margin-right: 8%;
-		text-align: right;
-		font-size: 1.5em;
-	}
-		
-	.small_date{
-		margin-left: 2%;
-		font-size: 1.3em;
-	}
-	#notice{
-		font-size: 1.3em;
+	.btn_space {
+		width: 25%;
+		display: inline;
+		margin: 1%;
 	}
 
-/*=================== Login Page ========================*/
-	.button{
+	#Ghadir_Logo_small {
 		margin: auto;
-		margin-left: 2%;
-		margin-right: 2%;
-		height: 40px;
-		width: 10%;
+		width: 100%;
+		height: auto;
+		opacity: .8;
+	}
+	.lr {
+		border-right: 1px solid #5500aa;
+		border-left: 1px solid #5500aa;
+	}
+	.ub {
+		border-top: 1px solid #5500aa;
+		border-bottom: 1px solid #5500aa;
+	}
+	.button {
+		margin: auto;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		margin-left: 1%;
+		margin-right: 1%;
+		height: 50px;
+		width: 20%;
+		font-size: 0.9em;
+	}
+
+	.red_star {
+		margin: auto;
+		margin-top: 1%;
+		text-align: center;
 		font-size: 1.0em;
 	}
-
-	.Center{
-	margin: auto;
-	text-align: center;
-	width: 4%;
+	.tbl_reg {
+		margin: auto;
+		margin-top: 2%;
+		text-align: center;
+		width: 80%;
+		border: 1px solid #d8b0ff;
+		font-size: 1.7em;
+		color:  1px solid #0134cb;
+		background-color: #d3d3d3;
+		opacity: .8;
+		
 	}
+	td{
+		height: 50px;
+	}
+	.tbl_term {
+		margin: auto;
+		margin-top: 1%;
+		text-align: left;
+		width: 80%;
+		font-size: 0.8em;
+		color: 1px solid #0134cb;
+		background-color: #d3d3d3;
+		padding-right: 1%;
+    	padding-left: 1%;
+    	opacity: .8;
+	}
+	.wrap {
+    	text-align: justify;
+    	text-justify: inter-word;
+    	padding-right: 1%;
+    	padding-left: 1%;
+	}
+	
+	input[type=checkbox]
+	{
+		/* Double-sized Checkboxes */
+		-ms-transform: scale(1.5); /* IE */
+		-moz-transform: scale(1.5); /* FF */
+		-webkit-transform: scale(1.5); /* Safari and Chrome */
+		-o-transform: scale(2); /* Opera */
+		padding: 10px;
+	}
+
+	input[type=radio]
+	{
+		/* Double-sized Checkboxes */
+		-ms-transform: scale(1.5); /* IE */
+		-moz-transform: scale(1.5); /* FF */
+		-webkit-transform: scale(1.5); /* Safari and Chrome */
+		-o-transform: scale(1.5); /* Opera */
+		padding: 10px;
+		margin: auto;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		margin-left: 2%;
+		margin-right: 2%;
+	}
+	
+	.text_area {
+		margin: auto;
+		height: 34px;
+		width: 97%;
+		font-size: 1.1em;
+		resize:none;
+		background: white;
+	}
+	.Status{
+		text-align: center;
+		font-size: 1.0em;
+		color:  #fe1224;
+		text-decoration: blink;
+	    animation:1s blinker linear infinite;
+    	-webkit-animation:1s blinker linear infinite;
+    	-moz-animation:1s blinker linear infinite;
+		color: red;
+	}
+	.SuccessSubmit{
+		text-align: center;
+		font-size: 1.0em;
+		color:  #015cf3;
+		text-decoration: blink;
+	}
+	.styling2 {
+		text-align: left;
+		margin-left: 2%;
+		color: #252525;
+		font: bold 24px MS Sans Serif;
+		padding: 0px;
+		text-shadow: 2px 2px 5px #252525;
+	}
+}
 /*======================================================================================================
 =============================================== 1000 px =================================================
 ======================================================================================================*/
-  @media screen and (min-width: 1000px){
-  
-	#between_tbl{
-	height: 30px;
-	width: 20%;
+@media screen and (min-width: 1000px) {
+	body {
+		background-image: url("../img/Blur/Fer.jpg");
+		background-size: 100% 140%;
+		background-repeat: no-repeat;
+		height: auto;
 	}
-	#cellspace{
-		height: 23px;
-		width: 60px;
-	}
-	.styling2{
-		text-align: left;
-		margin-left: 2%;
-		color:#6100c1;
-		font: bold 24px MS Sans Serif;
-		padding: 0px;
-	}
-	section{
-		margin-right: 10%;
-		text-align: right;
-		font-size: 1.6em;
-	}
-	#repoTitle{
-		width:30%;
-		margin-left: 0%; 
+	.btn_space {
+		width: 25%;
+		display: inline;
+		margin: 1%;
 	}
 
-	.header_tbl{
-	width: 100%;
-	border-collapse: collapse;
-    -webkit-border-radius: 25 25 25 25px;
-	-moz-border-radius: 25 25 25 25px;
-	border-radius: 25 25 25 25px;
-	
-    }
-	#Ghadir_Logo_small{
-		margin:auto;
-		width:100%;
-    	height: auto;
-	}
-	.body_tbl{
-	border: 2px solid #5500aa;
-	border-collapse: collapse;
-	width: 100%;
-	}
-	.cell_tbl{
-	border-collapse: collapse;
-	margin: auto;
-	width: 100%;
-	}
-	.footer_tbl{
-	border-collapse: collapse;
-	text-align: center;
-	margin: auto;
-	width: 100%;
-	
- 	}
-
-.lr{
-	border-right:1px solid #5500aa;
-	border-left:1px solid #5500aa;
-	
-}
-.ub{
-	border-top:1px solid #5500aa;
-	border-bottom:1px solid #5500aa;
-}
-
-.button{
+	#Ghadir_Logo_small {
 		margin: auto;
+		width: 100%;
+		height: auto;
+		opacity: .8;
+	}
+	.lr {
+		border-right: 1px solid #5500aa;
+		border-left: 1px solid #5500aa;
+	}
+	.ub {
+		border-top: 1px solid #5500aa;
+		border-bottom: 1px solid #5500aa;
+	}
+	.button {
+		margin: auto;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		margin-left: 1%;
+		margin-right: 1%;
+		height: 30px;
+		width: 20%;
+		font-size: 0.9em;
+	}
+
+	.red_star {
+		margin: auto;
+		margin-top: 1%;
+		text-align: center;
+		font-size: 1.0em;
+	}
+	.tbl_reg {
+		margin: auto;
+		margin-top: 1%;
+		text-align: center;
+		width: 45%;
+		border: 1px solid #d8b0ff;
+		font-size: 1.3em;
+		color:  1px solid #0134cb;
+		background-color: #d3d3d3;
+		opacity: .8;
+	}
+	.tbl_term {
+		margin: auto;
+		margin-top: 1%;
+		text-align: left;
+		width: 75%;
+		font-size: 0.8em;
+		color: 1px solid #0134cb;
+		background-color: #d3d3d3;
+		padding-right: 1%;
+    	padding-left: 1%;
+    	opacity: .8;
+	}
+	td{
+		height: 30px;
+	}
+	.wrap {
+    	text-align: justify;
+    	text-justify: inter-word;
+    	padding-right: 1%;
+    	padding-left: 1%;
+	}
+	
+	input[type=checkbox]
+	{
+		/* Double-sized Checkboxes */
+		-ms-transform: scale(1.5); /* IE */
+		-moz-transform: scale(1.5); /* FF */
+		-webkit-transform: scale(1.5); /* Safari and Chrome */
+		-o-transform: scale(2); /* Opera */
+		padding: 10px;
+	}
+
+	input[type=radio]
+	{
+		/* Double-sized Checkboxes */
+		-ms-transform: scale(1.5); /* IE */
+		-moz-transform: scale(1.5); /* FF */
+		-webkit-transform: scale(1.5); /* Safari and Chrome */
+		-o-transform: scale(1.5); /* Opera */
+		padding: 10px;
+		margin: auto;
+		margin-top: 2%;
+		margin-bottom: 2%;
 		margin-left: 2%;
 		margin-right: 2%;
-		height: 30px;
-		width: 30%;
-		font-size: 1.1em;
 	}
-
-.vertical{
-	-webkit-transform:rotate(270deg);
-	writing-mode:rl;
-	-moz-transform:rotate(270deg); 
-	-o-transform: rotate(270deg); 
-	padding: 2px;
-	text-align:center;  
-}
-.mirror{
--moz-transform: scale(-1, 1);
--webkit-transform: scale(-1, 1);
--o-transform: scale(-1, 1);
--ms-transform: scale(-1, 1);
-transform: scale(-1, 1);
-}
-
-}
-
-.Center{
-	margin: auto;
-	text-align: center;
-	width: 1%;
+	
+	.text_area {
+		margin: auto;
+		height: 34px;
+		width: 97%;
+		font-size: 1.1em;
+		resize:none;
+		background: white;
+	}
+	.Status{
+		text-align: center;
+		font-size: 1.0em;
+		color:  #fe1224;
+		text-decoration: blink;
+	    animation:1s blinker linear infinite;
+    	-webkit-animation:1s blinker linear infinite;
+    	-moz-animation:1s blinker linear infinite;
+		color: red;
+	}
+	.SuccessSubmit{
+		text-align: center;
+		font-size: 1.0em;
+		color:  #015cf3;
+		text-decoration: blink;
+	}
+	.styling2 {
+		text-align: left;
+		margin-left: 2%;
+		color: #252525;
+		font: bold 24px MS Sans Serif;
+		padding: 0px;
+		text-shadow: 2px 2px 5px #252525;
+	}
 }

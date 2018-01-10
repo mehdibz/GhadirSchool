@@ -21,6 +21,7 @@ import org.hibernate.Query;
 /**
  * Servlet implementation class RegisterServlet
  */
+@SuppressWarnings("deprecation")
 @WebServlet("/ReportServlet")
 
 public class ReportServlet extends HttpServlet {
@@ -29,7 +30,8 @@ public class ReportServlet extends HttpServlet {
 	 String checkUser,Header,Footer,Send,Loginmsg,TxArea,F_description,R_description,Q_description,S_description,hidden,Currentuser,send;
 	 String std_id,std_id2,std_name,std_family,course_name,dictation_score,grammar_score,reading_score,discipline_score,tot_score;
 	 String FarsiRec,ReligionRec,QuranRec,SalatRec,LastFarsi,LastReligion,LastQuran,LastSalat,FDate,FClass,FClass2,uname,password;
-	 Query query1,query2,query3,query4;
+	 @SuppressWarnings("rawtypes")
+	Query query1,query2,query3,query4;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setCharacterEncoding("UTF-8");
@@ -66,7 +68,7 @@ public class ReportServlet extends HttpServlet {
 	                	ReportModel Rm = (ReportModel) RepoProfile.get(i);
 	                	StudentModel Sm = (StudentModel) StdProfile.get(i);
 	                	
-	  	                request.setAttribute("userid",Sm.getUserid());
+	  	              //  request.setAttribute("userid",Sm.getUserid());
 	  	                request.setAttribute("ForDate",FDate);
 	  	                request.setAttribute("ForClass",FClass);
 	  	                request.setAttribute("stdNameFamily",Sm.getFname()+" "+Sm.getLname());
@@ -99,7 +101,7 @@ public class ReportServlet extends HttpServlet {
 	                	ReportModel Rm2 = (ReportModel) RepoProfile.get(i);
 	                	StudentModel Sm2 = (StudentModel) StdProfile.get(i);
 	                	
-	                	request.setAttribute("userid2",Sm2.getUserid());
+	                	//request.setAttribute("userid2",Sm2.getUserid());
 	                	request.setAttribute("ForDate2",FDate);
 	                	request.setAttribute("ForClass2",FClass2);
 	                	request.setAttribute("stdNameFamily2",Sm2.getFname()+" "+Sm2.getLname());
