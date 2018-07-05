@@ -23,10 +23,12 @@ public class StudentModel {
 	public StudentModel(){ }
 	
 
-
+//============
 	
-	
-	
+	public void setId(int id) {
+	//	Std_ID = id;
+	}
+//==============
 	public String getUsername() {
 		return Username;
 	}
@@ -150,7 +152,7 @@ public class StudentModel {
 	public void setCity(String city) {
 		City = city;
 	}
-	public long getFarsiGrade() {
+	public int getFarsiGrade() {
 		return FarsiGrade;
 	}
 	

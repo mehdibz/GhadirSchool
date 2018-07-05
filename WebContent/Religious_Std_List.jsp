@@ -52,10 +52,10 @@
 								<input name="userid" disabled size="4" value="<%=Std_Id%>">
 							</td>
 							<td class="name_col view_combo_stdName">
-								<input disabled size="17" value="<%=TextUser%>">
+								<input name="userid" disabled size="17" value="<%=TextUser%>">
 							</td>
 							<td class="">
-								<input disabled size="1" value="<%=level%>">
+								<input name="userid" disabled size="1" value="<%=level%>">
 							</td>
 							<td>
 								<select id="view_combo_MainCourse" name="course_name" onchange="show_sub_farsi()">

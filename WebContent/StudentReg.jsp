@@ -15,34 +15,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
         <title>Registration</title>
-        <link rel="stylesheet" href="css/SudentRegForm.css">
+        <link rel="stylesheet" href="css/FirstMenu.css">
     </head>
     <body>
-        <form method="post" action="StudentRegisterServlet">
-        
-        	<input type=hidden name="ini"  value="StdReg">
-    		<input type=hidden id="isvalid" name="val" value="invalid">
-		<%
- 		 String checkUser;
- 		 checkUser=null;
-	     try
-	     {
-	    	 checkUser=request.getSession().getAttribute("currentUser").toString();
-	  		if(!(checkUser=="Valid"))
-	 		{
-		 		response.sendRedirect("login.jsp");
-		 	}
-	     }
-	     catch(Exception e)
-	     {
-	    	 out.println(e.toString());
-	    	 response.sendRedirect("login.jsp");
-	     }
-        
-        %>
-        
-        
-        
+        <form method="post" action="registration.jsp">
            			<div>
                 		<nav>
                     		<ul>

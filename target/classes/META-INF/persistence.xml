@@ -21,8 +21,9 @@
             <property name="javax.persistence.jdbc.password" value="6393ba11c1726f72" />  -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
             <property name="hibernate.show_sql" value="true" />
-        	<property name="hibernate.hbm2ddl.auto" value="create" /> 
-        <!--<property name="hibernate.hbm2ddl.auto" value="update" />-->
+        <!--<property name="hibernate.hbm2ddl.auto" value="create" /> -->
+        	<property name="hibernate.hbm2ddl.auto" value="update" />
+        <!--<property name="hibernate.c3p0.testConnectionOnCheckout" value="true" />-->
         </properties>
     </persistence-unit>
 <!-- ==================================== VolunteerRegisterDB ============================================= -->
@@ -60,13 +61,13 @@
        	    <property name="hibernate.hbm2ddl.auto" value="validate" />
         </properties>
     </persistence-unit>
-<!-- ======================================= StudentLogin ============================================= -->
+<!-- ======================================= StudentCourses ============================================= -->
     <persistence-unit name="StudentCourses" transaction-type="RESOURCE_LOCAL">
         <description>
             Persistence unit for the JPA tutorial of the Hibernate Getting Started Guide
         </description>
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>Model.StudentModel</class>
+        <class>Model.StudentCourses</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
        	    <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/user"/>     
@@ -74,7 +75,7 @@
             <property name="javax.persistence.jdbc.password" value="admin" /> 
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
             <property name="hibernate.show_sql" value="true" />
-       	    <property name="hibernate.hbm2ddl.auto" value="validate" />
+       	    <property name="hibernate.hbm2ddl.auto" value="create" />
         </properties>
     </persistence-unit>
 </persistence>

@@ -193,27 +193,6 @@ public class VolunteerRegisterServlet extends HttpServlet {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 public class VolunteerRegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

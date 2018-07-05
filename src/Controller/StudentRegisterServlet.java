@@ -5,11 +5,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -39,9 +34,9 @@ public class StudentRegisterServlet extends HttpServlet {
         super();
     }*/
 	
-	EntityManagerFactory emf = Persistence.createEntityManagerFactory("StudentRegisterDB");
-	EntityManager em = emf.createEntityManager();
-	EntityTransaction tx = em.getTransaction();
+//	EntityManagerFactory emf = Persistence.createEntityManagerFactory("StudentRegisterDB");
+//	EntityManager em = emf.createEntityManager();
+//	EntityTransaction tx = em.getTransaction();
 	int count = 1;
 	
 
@@ -133,7 +128,7 @@ public class StudentRegisterServlet extends HttpServlet {
 				    Gender = (String) joUser.get("sex");
 				    
 				    StudentModel std=new StudentModel();
-		
+				    
 				    std.setFname(fname);
 				    std.setLname(lname);
 				    std.setBirthDate(BirthDate);
@@ -149,24 +144,29 @@ public class StudentRegisterServlet extends HttpServlet {
 				    std.setGender(Gender);
 				    std.setDetails(details);
 				    std.setPassword(Password);
-				    std.setDateTime(formattedDate); 
+				    std.setDateTime(formattedDate);
+				    std.setUsername("");
 		    
 				    
 				    if ((session.getAttribute("recordInsertedPermission") == null )||(session.getAttribute("recordInsertedPermission") == "true" ))
 				    {
-				    	Query query = em.createNativeQuery("SELECT COUNT(*) FROM StudentModel WHERE Carecard = :id ");
-				    	query.setParameter("id", Carecard);
-				    	int res = Integer.parseInt(query.getSingleResult().toString());
+				    	
+				    	transaction Tr=new transaction();
+				    	int res = 0;
+				    	
+//				    	Query query = em.createNativeQuery("SELECT COUNT(*) FROM StudentModel WHERE Carecard = :id ");
+//				    	query.setParameter("id", Carecard);
+//				    	int res = Integer.parseInt(query.getSingleResult().toString());
 		
 				    	//int res = query.executeUpdate();
 				    	//Query q = em.createNativeQuery("SELECT StudentModel.Fname, StudentModel.Lname FROM StudentModel WHERE StudentModel.Carecard = :id");
-				    	System.out.println("COUNT(*) FROM StudentModel = "+ res);
+				    	boolean DoubleCareCard = Tr.CheckExist(Carecard);
+				    	DoubleCareCard=false;
 				    	
-				    	if(res>0){
+				    	if(DoubleCareCard){
 					        try{
-						    	 query = em.createNativeQuery("SELECT Std_ID FROM StudentModel WHERE Carecard = :id ");
-						    	 query.setParameter("id", Carecard);
-					        	 String json = new Gson().toJson("duplicate!@" + query.getSingleResult().toString());
+
+					        	 String json = new Gson().toJson("duplicate!@" + Carecard);
 					             response.setContentType("application/json");
 					             response.getWriter().write(json);
 					          }
@@ -178,16 +178,18 @@ public class StudentRegisterServlet extends HttpServlet {
 					          }
 				    	}
 				    	else{
-					    	tx.begin();
-						    em.persist(std);
-						    em.flush();
-						    em.clear();
-						    tx.commit();
-						    
+//					    	tx.begin();
+//						    em.persist(std);
+//						    em.flush();
+//						    em.clear();
+//						    tx.commit();	
+						    	
+					    		
+				    		   res=Tr.doRegister(std);
 						       session.setAttribute("recordInsertedPermission","false");
-						    	System.out.println("Success, Values inserted = ");
+						    	System.out.println("Success, Values inserted ");
 						        try{
-						        	 String str=String.format("Student ID: "+std.getId()+"@\n Submitted Date: "+formattedDate +"\n Please save the student ID \nfor future references");
+						        	 String str=String.format("Student ID: "+res+"@\n Submitted Date: "+formattedDate +"\n Please save the student ID \nfor future references");
 						             String json = new Gson().toJson(str);
 						             response.setContentType("application/json");
 						             response.getWriter().write(json);
@@ -204,3 +206,63 @@ public class StudentRegisterServlet extends HttpServlet {
     	session.setMaxInactiveInterval(20*60);
 	}
 }
+
+/*
+ 				    if ((session.getAttribute("recordInsertedPermission") == null )||(session.getAttribute("recordInsertedPermission") == "true" ))
+				    {
+				    	
+				    	transaction Tr=new transaction();
+				    	int res = 0;
+				    	
+//				    	Query query = em.createNativeQuery("SELECT COUNT(*) FROM StudentModel WHERE Carecard = :id ");
+//				    	query.setParameter("id", Carecard);
+//				    	int res = Integer.parseInt(query.getSingleResult().toString());
+		
+				    	//int res = query.executeUpdate();
+				    	//Query q = em.createNativeQuery("SELECT StudentModel.Fname, StudentModel.Lname FROM StudentModel WHERE StudentModel.Carecard = :id");
+
+				    	res=Tr.doRegister(std);
+				    	
+				    	if(res>0){
+/*					        try{
+						    	 query = em.createNativeQuery("SELECT Std_ID FROM StudentModel WHERE Carecard = :id ");
+						    	 query.setParameter("id", Carecard);
+					        	 String json = new Gson().toJson("duplicate!@" + query.getSingleResult().toString());
+					             response.setContentType("application/json");
+					             response.getWriter().write(json);
+					          }
+					          catch (Exception e) {
+					             e.printStackTrace();
+					             String json = new Gson().toJson("failed!");
+					             response.setContentType("application/json");
+					             response.getWriter().write(json);
+					          }
+				    	}
+				    	else{
+//					    	tx.begin();
+//						    em.persist(std);
+//						    em.flush();
+//						    em.clear();
+//						    tx.commit();	
+						    	
+					    		
+						    
+						       session.setAttribute("recordInsertedPermission","false");
+						    	System.out.println("Success, Values inserted = ");
+						        try{
+						        	 String str=String.format("Student ID: "+std.getId()+"@\n Submitted Date: "+formattedDate +"\n Please save the student ID \nfor future references");
+						             String json = new Gson().toJson(str);
+						             response.setContentType("application/json");
+						             response.getWriter().write(json);
+						          }
+						          catch (Exception e) {
+						             e.printStackTrace();
+						             String json = new Gson().toJson("failed!");
+						             response.setContentType("application/json");
+						             response.getWriter().write(json);
+						          }
+				    	}
+				    }
+ 
+ 
+  */

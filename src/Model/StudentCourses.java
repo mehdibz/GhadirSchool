@@ -1,16 +1,22 @@
 package Model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
-
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table( name = "StudentCourses" )
 //@TableGenerator(name = "seq", allocationSize = 110100, initialValue = 110100)
 public class StudentCourses {
-//	@Id
+	@Id
 //	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq")
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq")
+//	@GenericGenerator(name = "gen", strategy = "foreign", parameters = { @Parameter(name = "property", value = "employee") })
+	@GenericGenerator(name = "gen", strategy = "foreign")
 	
 	private int Std_ID;
 	private String F_description,R_description,Q_description,S_description,tot_score,dictation_score;

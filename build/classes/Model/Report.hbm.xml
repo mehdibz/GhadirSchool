@@ -5,7 +5,7 @@
  
 <hibernate-mapping package="Model">
  
-    <class name="ReportModel" table="report_16_17_t2">
+    <class name="ReportModel" table="report">
         <id name="stdID" column="Student_ID">
             <generator class="increment"/>
         </id>
@@ -31,8 +31,8 @@
         <id name="userid" column="Id">
             <generator class="increment"/>
         </id>
-        <property name="fname" column="Name "/> 
-        <property name="lname" column="Family"/> 
+        <property name="fname" column="Name "/>
+        <property name="lname" column="Family"/>
         <property name="BirthDate" column="BirthDate"/>
         <property name="email" column="Primary_Email"/>
         <property name="phone" column="Primary_Phone"/>

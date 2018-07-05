@@ -29,18 +29,18 @@ import org.json.simple.parser.ParseException;
 
 /**
  * Servlet implementation class RegisterServlet
-@WebServlet(value="/StudentRegisterServlet")
+@WebServlet(value="/StudentCoursesServlet")
 */
 
 public class StudentCoursesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	/*
-    public StudentRegisterServlet() {
+    public StudentCoursesServlet() {
         super();
     }*/
 	
-	EntityManagerFactory emf = Persistence.createEntityManagerFactory("StudentRegisterDB");
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("StudentCourses");
 	EntityManager em = emf.createEntityManager();
 	EntityTransaction tx = em.getTransaction();
 	int count = 1;
@@ -78,7 +78,7 @@ public class StudentCoursesServlet extends HttpServlet {
 
 			    	id = Long.parseLong(request.getParameter("userid").toString());
 			    	fname = request.getParameter("userid").toString();
-				    lname = (String) joUser.get("Family");
+	/*			    lname = (String) joUser.get("Family");
 				    FarsiGrade = Integer.parseInt((String)joUser.get("FarsiGrade"));
 				    details = (String) joUser.get("Details");
 				    Restriction = (String) joUser.get("Restriction");
@@ -94,11 +94,11 @@ public class StudentCoursesServlet extends HttpServlet {
 				    Std_Crs.setDetails(details);
 				    Std_Crs.setDateTime(formattedDate); 
 		    
-				    
+		*/		    
 				    if ((session.getAttribute("recordInsertedPermission") == null )||(session.getAttribute("recordInsertedPermission") == "true" ))
 				    {
 				    	Query query = em.createNativeQuery("SELECT COUNT(*) FROM StudentModel WHERE Carecard = :id ");
-				    	query.setParameter("id", Carecard);
+//				    	query.setParameter("id", Carecard);
 				    	int res = Integer.parseInt(query.getSingleResult().toString());
 		
 				    	//int res = query.executeUpdate();
@@ -108,7 +108,7 @@ public class StudentCoursesServlet extends HttpServlet {
 				    	if(res>0){
 					        try{
 						    	 query = em.createNativeQuery("SELECT Std_ID FROM StudentModel WHERE Carecard = :id ");
-						    	 query.setParameter("id", Carecard);
+//						    	 query.setParameter("id", Carecard);
 					        	 String json = new Gson().toJson("duplicate!@" + query.getSingleResult().toString());
 					             response.setContentType("application/json");
 					             response.getWriter().write(json);
@@ -122,7 +122,7 @@ public class StudentCoursesServlet extends HttpServlet {
 				    	}
 				    	else{
 					    	tx.begin();
-						    em.persist(Std_Crs);
+	//					    em.persist(Std_Crs);
 						    em.flush();
 						    em.clear();
 						    tx.commit();
@@ -130,10 +130,10 @@ public class StudentCoursesServlet extends HttpServlet {
 						       session.setAttribute("recordInsertedPermission","false");
 						    	System.out.println("Success, Values inserted = ");
 						        try{
-						        	 String str=String.format("Student ID: "+Std_Crs.f1_getStdID()+"@\n Submitted Date: "+formattedDate +"\n Please save the student ID \nfor future references");
-						             String json = new Gson().toJson(str);
+//						        	 String str=String.format("Student ID: "+Std_Crs.f1_getStdID()+"@\n Submitted Date: "+formattedDate +"\n Please save the student ID \nfor future references");
+//						             String json = new Gson().toJson(str);
 						             response.setContentType("application/json");
-						             response.getWriter().write(json);
+//						             response.getWriter().write(json);
 						          }
 						          catch (Exception e) {
 						             e.printStackTrace();
